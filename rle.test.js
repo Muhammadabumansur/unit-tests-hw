@@ -1,15 +1,15 @@
 const { rle } = require('./rle');
 
 describe('Test rle function',  () => {
-  test(`Test string "abc"`, () => expect(rle("abc")).toEqual(`abc`));
+  test(`Тестируем строку без повторений "abc"`, () => expect(rle("abc")).toEqual(`abc`));
 
-  test(`Test string "abBBBc"`, () => expect(rle("abBBBc")).toEqual(`abB3c`));
+  test(`Тестируем строку с повторениями в разных регистрах "abBBBc"`, () => expect(rle("abBBBc")).toEqual(`abB3c`));
 
-  test(`Test string "abBBBc22"`, () => expect(rle("abBBBc22")).toEqual(`abB3c22`));
+  test(`Тестируем строку с повторениями цифр "abBBBc22"`, () => expect(rle("abBBBc22")).toEqual(`abB3c22`));
 
-  test(`Test number`, () => expect(() => rle(5)).toThrow());
+  test(`Вызов функции с аргументом числом вызовет ошибку`, () => expect(() => rle(5)).toThrow());
 
-  test(`Test undefined`, () => expect(() => rle(undefined)).toThrow());
+  test(`Вызов функции с аргументом undefined вызовет ошибку`, () => expect(() => rle(undefined)).toThrow());
 
-  test(`Test boolean`, () => expect(() => rle(true)).toThrow());
+  test(`Вызов функции с аргументом булевого типа вызовет ошибку`, () => expect(() => rle(true)).toThrow());
 });

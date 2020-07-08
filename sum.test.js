@@ -1,15 +1,15 @@
 const { sum } = require('./sum');
 
 describe('Test meanMode function',  () => {
-  test(`Test call without arguments`, () => expect(sum()).toBe(0));
+  test(`Вызов без аргументов должен вернуть 0`, () => expect(sum()).toBe(0));
 
-  test(`Test sum(5)`, () => expect(sum(5)).toBeInstanceOf(Function));
+  test(`Вызов sum(5) должен вернуть функцию`, () => expect(sum(5)).toBeInstanceOf(Function));
 
-  test(`Test sum(5)()`, () => expect(sum(5)()).toBe(5));
+  test(`Вызов sum(5)() должен вернуть 5`, () => expect(sum(5)()).toBe(5));
 
-  test(`Test sum(5)(6)()`, () => expect(sum(5)(6)()).toBe(11));
+  test(`Вызов sum(5)(6)() должен вернуть 11`, () => expect(sum(5)(6)()).toBe(11));
 
-  test(`Test sum("Hello ")("world!")()`, () => expect(sum("Hello ")("world!")()).toBeNaN());
+  test(`Вызов со строками в аргументах должен вернуть NaN`, () => expect(sum("Hello ")("world!")()).toBeNaN());
 
-  test(`Test sum()()`, () => expect(() => sum()()).toThrow());
+  test(`Последовательный вызов без аргументов приводит к ошибке`, () => expect(() => sum()()).toThrow());
 });
