@@ -3,13 +3,12 @@ const { limitCalls } = require("./limitCalls");
 const testFn = limitCalls(() => 5, 3);
 
 describe('test limitCalls function',  () => {
-    test(`test testFn 1st time`,
+    test(`Вызываем функцию первый раз, ожидаем вывод 5`,
       () => expect(testFn()).toEqual(5));
-    test(`test testFn 2nd time`,
+    test(`Вызываем функцию второй раз, ожидаем вывод 5`,
       () => expect(testFn()).toEqual(5));
-    test(`test testFn 3rd time`,
+    test(`Вызываем функцию третий раз, ожидаем вывод 5`,
       () => expect(testFn()).toEqual(5));
-    test(`test testFn 4th time`,
+    test(`Вызываем функцию четвертый раз, ожидаем вывод undefined`,
       () => expect(testFn()).toBeUndefined());
-
 });
